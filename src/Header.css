@@ -3,5 +3,29 @@
     background-color: #17171A;
     color: aliceblue;
     display: flex;
+    align-items: center;
+    height: 70px;
     justify-content: space-between;
+    border-bottom: 1px solid #414555;
+}
+
+.header-button {
+    display: flex;
+}
+
+button {
+    /* padding: 20px; */
+    background: none;
+    width: 125px;
+    border: none;
+    color: white;
+    text-align: center; 
+    font-size: 16px;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+button:hover {
+    font-size: large;
+    color: rgb(137, 128, 145);
 }

@@ -14,11 +14,11 @@ function App() {
         setCoins(res.data);
         console.log(coins);
       })
-      .catch(err => alert("Error! Try again later."))
+      .catch(err => console.log("Error! Try again later."))
   }, []);
 
   return (
-    <div className="tracker-app">
+    <div className="app">
       <Header></Header>
     </div>
   );
