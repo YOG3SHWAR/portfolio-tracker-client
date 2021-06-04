@@ -1,16 +1,17 @@
 import React from 'react'
 import './Header.css'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
     return (
         <div className="header">
             <div className="header-button">
-                <button>Dashboard</button>
-                <button>Transictions</button>
-                <button>Crypto Prices</button>
+                <Link to='/dashboard'><button>Dashboard</button></Link>
+                <Link to='/transictions'><button>Transictions</button></Link>
+                <Link to='/crypto-prices'><button>Crypto Prices</button></Link>
             </div>
             <div className="header-logout">
-                <button>Log Out</button>
+                <Link><button>Log Out</button></Link>
             </div>
         </div>
     )

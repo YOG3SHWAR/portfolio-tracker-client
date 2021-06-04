@@ -26,6 +26,6 @@ button {
 }
 
 button:hover {
-    font-size: large;
-    color: rgb(137, 128, 145);
+    font-size: 17px;
+    color: turquoise;
 }
