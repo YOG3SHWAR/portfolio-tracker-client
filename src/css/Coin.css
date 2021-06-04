@@ -12,6 +12,13 @@
     border-bottom: 1px solid #414555;
 }
 
+.coin-row:hover {
+    border: 1px solid #414555;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 950px;
+}
+
 .coin {
     display: flex;
     align-items: center;

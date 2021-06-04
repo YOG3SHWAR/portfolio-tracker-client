@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import './CryptoPrices.css'
-import './Coin.css'
+import '../css/CryptoPrices.css'
+import '../css/Coin.css'
 import Coin from './Coin'
 
 const CryptoPrices = () => {
