@@ -36,21 +36,7 @@ const CryptoPrices = () => {
                     <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
                 </form>
             </div>
-            <div className="coin-container">
-                <div className="coin-row">
-                    <div className="coin">
-                        {/* <img src="" alt="crypto" /> */}
-                        <h1>Name</h1>
-                        <p className="coin-symbol">Symbol</p>
-                    </div>
-                    <div className="coin-data">
-                        <p className="coin-price">Price</p>
-                        <div className="coin-volume">Volume</div>
-                        <p className="coin-percent">24%</p>
-                        <p className="coin-marketcao">Market Cap</p>
-                    </div>
-                </div>
-            </div>
+
             {filteredCoins.map(coin => {
                 return (
                     <Coin
