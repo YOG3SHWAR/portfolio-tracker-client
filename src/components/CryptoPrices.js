@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 const CryptoPrices = () => {
     const [coins, setCoins] = useState([]);
     const [search, setSearch] = useState('');
-<<<<<<< HEAD
     const getApi = async () =>
       {
         try
@@ -20,29 +19,16 @@ const CryptoPrices = () => {
           }
           catch(err)
           {
-            console.log("There has been an error!");
+            console.log("Error! Try again later.");
           }
       };
-    useEffect(
-      () =>{ getApi(); }
-      ,
-      []
-  );
-=======
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true)
-        axios
-            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-            .then(res => {
-                setCoins(res.data);
-
-            })
-            .catch(err => console.log("Error! Try again later."));
+        getApi();
         setLoading(false);
     }, []);
->>>>>>> 1831e43e7cb97621726783e097af9464eab69e0c
 
     const handleChange = e => {
         setSearch(e.target.value);
@@ -57,7 +43,7 @@ const CryptoPrices = () => {
     const setCoinId = (coinId) =>
         localStorage.setItem("coinId", coinId);
 
-    if (isLoading) return (<div className="loading"></div>)
+    if (isLoading) return (<div className="loader"></div>)
 
     return (
         <div className='crypto-prices'>
@@ -68,7 +54,6 @@ const CryptoPrices = () => {
                 </form>
             </div>
 
-<<<<<<< HEAD
             {filteredCoins.map
               (
                 coin =>
@@ -89,7 +74,6 @@ const CryptoPrices = () => {
               }
           )
         }
-=======
             {filteredCoins.map(coin => {
                 return (
                     <Link className="coin-link" to={`/coin-chart/${coin.id}`}>
@@ -106,7 +90,6 @@ const CryptoPrices = () => {
                     </Link>
                 )
             })}
->>>>>>> 1831e43e7cb97621726783e097af9464eab69e0c
         </div>
     )
 }
