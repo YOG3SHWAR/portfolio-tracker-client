@@ -7,16 +7,24 @@ import Coin from './Coin'
 const CryptoPrices = () => {
     const [coins, setCoins] = useState([]);
     const [search, setSearch] = useState('');
-
-    useEffect(() => {
-        axios
-            .get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false")
-            .then(res => {
-                setCoins(res.data);
-                console.log(coins);
-            })
-            .catch(err => console.log("Error! Try again later."))
-    }, []);
+    const getApi = async () =>
+      {
+        try
+          {
+            let res = await axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false")
+            setCoins(res.data);
+            console.log(coins);
+          }
+          catch(err)
+          {
+            console.log("There has been an error!");
+          }
+      };
+    useEffect(
+      () =>{ getApi(); }
+      ,
+      []
+  );
 
     const handleChange = e => {
         setSearch(e.target.value);
