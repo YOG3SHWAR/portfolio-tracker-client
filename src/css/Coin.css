@@ -3,6 +3,11 @@
     justify-content: center;
 }
 
+.coin-link{
+    text-decoration:none;
+    color: aliceblue;
+}
+
 .coin-row {
     display: flex;
     justify-items: start;
